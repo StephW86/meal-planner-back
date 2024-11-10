@@ -42,7 +42,7 @@ routes.get('/:id', async (req, res, next) => {
 });
 
 routes.post('/', async (req, res, next) => {
-  const mealToAdd = {...req.body};
+  const mealToAdd = {...req.body.body};
   const name = mealToAdd.name;
   try {
     const mealExists = await Meal.find({name: name}).lean();
