@@ -100,4 +100,17 @@ routes.patch('/:id', async (req, res, next) => {
   }
 });
 
+routes.delete('/:id', async (req, res, next) => {
+  const mealId = req.params.id;
+  try {
+    const meal = await Meal.findByIdAndDelete(mealId);
+
+    res
+      .status(204)
+      .end();
+  } catch (error) {
+    next(err);
+  }
+})
+
 export default routes;
