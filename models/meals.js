@@ -15,7 +15,6 @@ const mealSchema = new mongoose.Schema(
         type: String,
         required: true,
       },
-      amount_type: String,
     }],
     tags: {
       type: [String],
