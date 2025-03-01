@@ -109,7 +109,7 @@ routes.delete('/:id', async (req, res, next) => {
       .status(204)
       .end();
   } catch (error) {
-    next(err);
+    next(error);
   }
 })
 
